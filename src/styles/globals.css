@@ -3,3 +3,41 @@
     scroll-behavior: smooth !important;
   }
 }
+@layer base {
+  ::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  /* Основной трек скроллбара */
+  ::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикального */
+    height: 10px; /* Высота горизонтального */
+  }
+
+  /* Фон дорожки (трек) */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 12px; /* Скругление трека, если хочешь */
+  }
+
+  /* Ползунок (thumb) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #0b0069;
+    border-radius: 12px; /* Скругление ползунка */
+    border: 2px solid transparent; /* Чтобы ползунок не прилипал к краям */
+    background-clip: content-box; /* Чтобы работал бордер */
+  }
+
+  /* Ползунок при наведении */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin; /* Тонкий скролл */
+    scrollbar-color: #0b0069 #f1f1f1; /* Цвет ползунка и дорожки */
+  }
+}
